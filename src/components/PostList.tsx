@@ -1,16 +1,22 @@
-import { Post, getAllPosts } from '@/lib/posts'
+import { Post } from '@/lib/posts'
+import PostCard from './PostCard'
 
-export default async function PostList() {
-  const posts = await getAllPosts()
+export default function PostList({
+  selectedCategory,
+  posts,
+}: {
+  selectedCategory: string
+  posts: Post[]
+}) {
+  const filteredPosts =
+    selectedCategory === 'All'
+      ? posts
+      : posts.filter((post) => post.category === selectedCategory)
+
   return (
-    <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      {posts.map((post: Post) => (
-        <li key={post.path} className="border-2 p-1 border-grey-200 mb-2">
-          <div>title: {post.title}</div>
-          <div>date: {post.date.toString()}</div>
-          <div>category: {post.category}</div>
-          <div>tags: {post.tags.join('|')}</div>
-        </li>
+    <ul className="m-4 grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      {filteredPosts.map((post: Post) => (
+        <PostCard key={post.path} post={post} />
       ))}
     </ul>
   )

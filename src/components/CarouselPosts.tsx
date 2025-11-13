@@ -6,7 +6,7 @@ export default function CarouselPosts({ posts }: { posts: Post[] }) {
     <ul className="overflow-x-auto flex snap-x">
       {posts.map((post) => (
         <li key={post.path} className="snap-center mx-4">
-          <PostCard post={post} />
+          <PostCard width="300" post={post} />
         </li>
       ))}
     </ul>

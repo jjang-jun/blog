@@ -41,23 +41,32 @@ export async function getPostData(fileName: string): Promise<PostData> {
   return { ...post, content }
 }
 
-export async function getAllCategories() {
-  const set = new Set()
-
+export async function getCategories() {
   const filePath = path.join(postsDir, 'posts.json')
   const postsJsonStr = await readFile(filePath, 'utf-8')
   const posts = JSON.parse(postsJsonStr) as Post[]
 
-  const countingOfCategories = {
+  const categories = {
     All: posts.length,
-  } as Record<string, number>
+    ...countElements(posts.map((post) => post.category)),
+  }
 
-  posts.forEach((post) => {
-    const category = post.category
-    countingOfCategories[category] = countingOfCategories[category]
-      ? countingOfCategories[category] + 1
-      : 1
-  })
+  console.log(categories)
+  return categories
+}
 
-  return countingOfCategories
+function countElements<T>(arr: T[]): Record<string, number> {
+  const countObj: Record<string, number> = {}
+
+  for (const element of arr) {
+    const key = String(element)
+
+    if (countObj[key]) {
+      countObj[key]++
+    } else {
+      countObj[key] = 1
+    }
+  }
+
+  return countObj
 }
