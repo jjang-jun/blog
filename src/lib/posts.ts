@@ -7,6 +7,8 @@ export type Post = {
   path: string
   tags: string[]
   date: Date
+  readingTimeInMinutes: number
+  desc: string
 }
 
 export type PostData = Post & {

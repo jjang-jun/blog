@@ -19,6 +19,7 @@ export default function MarkdownViewer({ content }: { content: string }) {
               PreTag="div"
               {...props}
               style={materialDark}
+              showLineNumbers
             >
               {String(children).replace(/\n$/, '')}
             </SyntaxHighlighter>

@@ -12,27 +12,19 @@ const paths = [
     label: 'Posts',
     href: '/posts',
   },
-  {
-    label: 'Contact',
-    href: '/contact',
-  },
 ]
 
-export default function Navbar({ showNavbar }: { showNavbar: boolean }) {
+export default function Navbar() {
   const pathname = usePathname()
-  console.log(pathname)
 
   return (
     <nav className="w-full">
-      <ul className={`flex ${showNavbar ? 'flex-col text-center' : ''}`}>
+      <ul className="flex 'flex-col">
         {paths.map((path) => (
           <li
             key={path.href}
-            className={`hover:bg-sky-400 rounded-sm p-2 ${
-              showNavbar
-                ? 'w-full'
-                : 'w-16 h-10 mr-3 flex items-center justify-center'
-            }  ${pathname === path.href ? 'bg-sky-400 ' : ''}`}
+            className={`hover:bg-sky-400 rounded-sm p-2 mr-2
+              ${pathname === path.href ? 'bg-sky-400 ' : ''}`}
           >
             <Link href={path.href}>{path.label}</Link>
           </li>

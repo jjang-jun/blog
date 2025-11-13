@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 import { Post } from '@/lib/posts'
@@ -30,7 +29,7 @@ export default function PostCard({
             {category}
           </span>
         </div>
-      </article>
-    </Link>
+      </Link>
+    </li>
   )
 }
