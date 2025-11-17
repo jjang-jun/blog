@@ -1,65 +1,21 @@
 [
   {
-    "title": "AOS, IOS input validation (a.k.a. vue js)",
-    "date": "2023-05-31",
-    "category": "javascript",
-    "path": "aos-ios-input-validation-vue-js",
-    "tags": ["cross browsing", "javascript"]
+    "title": "2023 회고",
+    "date": "2024-01-06",
+    "category": "회고",
+    "path": "2023-retrospection",
+    "tags": ["회고", "주니어"],
+    "readingTimeInMinutes": "6",
+    "desc": "금융권 주니어 개발자의 2023 회고",
+    "thumbnail": ""
   },
   {
-    "title": "자바스크립트 기초 문법",
-    "date": "2022-05-08",
-    "category": "javascript",
-    "path": "javascript-basic",
-    "tags": ["javascript"]
-  },
-  {
-    "title": "자바스크립트 기초 문법",
-    "date": "2022-05-08",
-    "category": "javascript",
-    "path": "javascript-1",
-    "tags": ["javascript"]
-  },
-  {
-    "title": "자바스크립트 기초 문법",
-    "date": "2022-05-08",
-    "category": "javascript",
-    "path": "javascript-2",
-    "tags": ["javascript"]
-  },
-  {
-    "title": "자바스크립트 기초 문법",
-    "date": "2022-05-08",
-    "category": "javascript",
-    "path": "javascript-3",
-    "tags": ["javascript"]
-  },
-  {
-    "title": "자바스크립트 기초 문법",
-    "date": "2022-05-08",
-    "category": "javascript",
-    "path": "javascript-4",
-    "tags": ["javascript"]
-  },
-  {
-    "title": "크로스 브라우징",
-    "date": "2022-05-10",
-    "category": "browser",
-    "path": "browser-1",
-    "tags": ["browser", "chrome"]
-  },
-  {
-    "title": "크로스 브라우징 - 2",
-    "date": "2022-05-15",
-    "category": "browser",
-    "path": "browser-2",
-    "tags": ["browser", "chrome"]
-  },
-  {
-    "title": "크로스 브라우징 - 3",
-    "date": "2022-05-19",
-    "category": "browser",
-    "path": "browser-3",
-    "tags": ["browser", "chrome"]
+    "title": "React key와 memo, re-render",
+    "date": "2024-02-17",
+    "category": "React",
+    "path": "react-key-memo-rerender",
+    "tags": ["React", "memo", "key", ""],
+    "readingTimeInMinutes": "8",
+    "desc": "React의 key와 memo, re-render"
   }
 ]

@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import PostsCategoryFilter from '@/components/PostsCategoryFilter'
 import { getAllPosts, getCategories } from '@/lib/posts'
-import PostList from '@/components/PostList'
 
 export const metadata: Metadata = {
   title: '게시글 목록',

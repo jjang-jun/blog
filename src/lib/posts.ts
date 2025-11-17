@@ -9,6 +9,7 @@ export type Post = {
   date: Date
   readingTimeInMinutes: number
   desc: string
+  thumbnail: string
 }
 
 export type PostData = Post & {
