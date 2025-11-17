@@ -3,5 +3,6 @@
     "semi": false,
     "bracketSameLine": false,
     "bracketSpacing": true,
-    "singleQuote": true
+    "singleQuote": true,
+    "endOfLine": "lf"
 }
