@@ -1,0 +1,13 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 💬 일반 질문
+    url: https://github.com/jjang-jun/blog/discussions
+    about: 블로그 관련 일반적인 질문이나 논의는 Discussions를 이용해주세요
+
+  - name: 📧 개인 문의
+    url: mailto:95jjangjun@gmail.com
+    about: 비공개 문의사항이 있으시면 이메일로 연락주세요
+
+  - name: 📖 블로그 방문
+    url: https://jjangjun.com
+    about: 블로그를 직접 방문해보세요
