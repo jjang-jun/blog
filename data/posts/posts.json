@@ -17,5 +17,14 @@
     "tags": ["React", "memo", "key", ""],
     "readingTimeInMinutes": "8",
     "desc": "React의 key와 memo, re-render"
+  },
+  {
+    "title": "🚨 Vue In-DOM 템플릿, 당신의 script 코드를 두 번 실행하고 있다!",
+    "date": "2025-11-17",
+    "category": "Vue",
+    "path": "vue-script-tag-double-rendering-issue",
+    "tags": ["Vue", "javascript"],
+    "readingTimeInMinutes": "10",
+    "desc": "Vue In-DOM 템플릿을 사용할 때 스크립트가 두 번 실행되는 이슈와 해결 방안에 대해 알아본다."
   }
 ]
