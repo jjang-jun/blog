@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={notoSans.className}>
-      <body className={`flex flex-col h-full w-full mx-auto max-w-screen-md`}>
+      <body className={`flex flex-col h-full w-full mx-auto max-w-screen-lg`}>
         <Header />
         <main className="grow">{children}</main>
         <Footer />
