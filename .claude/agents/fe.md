@@ -99,7 +99,7 @@ src/
 1. 컴포넌트는 `src/components/`에 PascalCase 파일명으로 생성
 2. 데이터 페칭은 `src/lib/`에서 처리 (fs/promises 기반)
 3. Tailwind 유틸리티 클래스 사용, 커스텀 CSS 최소화
-4. 반응형: `md` 브레이크포인트(768px) 기준 레이아웃 전환
+4. **Mobile First 반응형**: 기본 스타일은 모바일 기준, `md`(768px)·`lg`(1024px)로 PC 대응
 5. 이미지는 Next.js `Image` 컴포넌트 사용
 6. 코드 포매팅: Prettier 설정 준수 (세미콜론 없음, 싱글 쿼트)
 7. 액센트 컬러: `sky-600`

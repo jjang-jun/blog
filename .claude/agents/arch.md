@@ -18,6 +18,19 @@ model: claude-sonnet-4-6
 
 아래 워크플로우를 **반드시** 순서대로 실행합니다.
 
+### Step 0. Local 최신화
+
+작업 시작 전 **반드시** remote의 최신 상태를 로컬에 반영합니다:
+
+```bash
+git fetch origin
+git pull --rebase origin main
+```
+
+- 충돌 발생 시 해결 후 `git rebase --continue`
+- 최신화 실패 시 사용자에게 보고 후 판단 요청
+- 이 단계를 건너뛰면 push 시 충돌이 발생할 수 있으므로 **반드시 선행**
+
 ### Step 1. 요구사항 수신 및 기술 설계
 
 PM(@pm)이 설계한 요구사항을 수신하여 다음을 작성합니다:
