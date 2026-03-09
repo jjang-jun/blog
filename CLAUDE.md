@@ -22,7 +22,7 @@ npx tsc --noEmit    # 타입 체크
 
 - **Prettier**: 세미콜론 없음, 싱글 쿼트, 2스페이스
 - **TS**: strict, path alias `@/*` → `./src/*`, 타입은 lib 내 co-locate
-- **스타일**: Tailwind 유틸리티, 반응형 `md`(768px), 액센트 `sky-600`, prose for markdown
+- **스타일**: Tailwind 유틸리티, **Mobile First** 반응형 (`md`(768px), `lg`(1024px)), 액센트 `sky-600`, prose for markdown
 - **이미지**: Next.js `Image` 컴포넌트, 외부 도메인 `images.unsplash.com`만 허용
 - **커밋**: `feat:` `fix:` `chore:` `post:` `refactor:` `style:` `data:` `deprecated:`
 - **PR**: 본문에 `Close #이슈_번호`
