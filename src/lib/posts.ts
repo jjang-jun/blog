@@ -26,10 +26,6 @@ export async function getAllPosts(): Promise<Post[]> {
   return posts.sort((a, b) => (a.date > b.date ? -1 : 1))
 }
 
-export async function getRecentPosts(postCount: number): Promise<Post[]> {
-  return (await getAllPosts()).slice(0, postCount)
-}
-
 export async function getPostData(fileName: string): Promise<PostData> {
   const filePath = path.join(postsDir, `${fileName}.md`)
   const posts = await getAllPosts()
@@ -40,19 +36,4 @@ export async function getPostData(fileName: string): Promise<PostData> {
   const content = await readFile(filePath, 'utf-8')
 
   return { ...post, content }
-}
-
-export async function getCategories(): Promise<Record<string, number>> {
-  const posts = await getAllPosts()
-
-  const countingOfCategories: Record<string, number> = {
-    All: posts.length,
-  }
-
-  posts.forEach((post) => {
-    const { category } = post
-    countingOfCategories[category] = (countingOfCategories[category] ?? 0) + 1
-  })
-
-  return countingOfCategories
 }

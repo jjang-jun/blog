@@ -8,10 +8,6 @@ const paths = [
     label: 'About',
     href: '/about',
   },
-  {
-    label: 'Posts',
-    href: '/posts',
-  },
 ]
 
 export default function Navbar() {
