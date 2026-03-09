@@ -31,7 +31,7 @@ const SECTIONS = [
           href="https://github.com/jjang-jun/economic-agent"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-500 underline hover:text-blue-600"
+          className="text-primary-500 underline hover:text-primary-600"
         >
           economic-agent
         </a>
@@ -65,7 +65,7 @@ export default async function About() {
           width={120}
           height={120}
           alt="장준혁 프로필 이미지"
-          className="mx-auto mb-4 rounded-full border-2 border-blue-200"
+          className="mx-auto mb-4 rounded-full border-2 border-primary-200"
         />
         <h1 className="text-2xl font-bold text-gray-900 md:text-3xl">
           장준혁
@@ -86,7 +86,7 @@ export default async function About() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={name}
-              className="flex h-10 w-10 items-center justify-center rounded-full text-gray-500 transition-colors hover:bg-blue-50 hover:text-blue-500"
+              className="flex h-10 w-10 items-center justify-center rounded-full text-gray-500 transition-colors hover:bg-primary-50 hover:text-primary-500"
             >
               {ICONS[name]}
             </a>
@@ -100,7 +100,7 @@ export default async function About() {
           <div key={section.title}>
             {index > 0 && <hr className="mb-10 border-gray-200 md:mb-14" />}
             <div className="mb-10 md:mb-14">
-              <h2 className="mb-4 text-lg font-bold text-blue-500 md:text-xl">
+              <h2 className="mb-4 text-lg font-bold text-primary-500 md:text-xl">
                 {section.title}
               </h2>
               <div className="space-y-3 pl-4">

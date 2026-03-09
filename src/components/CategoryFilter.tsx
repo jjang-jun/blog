@@ -19,7 +19,7 @@ export default function CategoryFilter({
             key={name}
             className={
               name === selectedCategory
-                ? 'text-sky-400 font-bold text-xl'
+                ? 'text-primary-500 font-bold text-xl'
                 : 'text-xl'
             }
           >

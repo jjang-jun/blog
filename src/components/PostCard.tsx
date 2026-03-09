@@ -42,12 +42,12 @@ export default function PostCard({ post }: PostCardProps) {
 
         <div className="flex flex-col flex-grow p-4">
           <div className="mb-2">
-            <span className="inline-block text-xs font-medium rounded-full bg-green-100 text-green-800 px-3 py-1">
+            <span className="inline-block text-xs font-medium rounded-full bg-primary-50 text-primary-700 px-3 py-1">
               {category}
             </span>
           </div>
 
-          <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-green-600 transition-colors">
+          <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-primary-500 transition-colors">
             {title}
           </h3>
 
