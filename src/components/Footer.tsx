@@ -6,7 +6,7 @@ const LINKS = [{ icon: <AiFillGithub />, url: 'https://github.com/95rolancia' }]
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col items-center my-2">
+    <footer className="mx-auto max-w-2xl flex flex-col items-center my-2 px-6 md:px-8">
       <ul className="flex gap-4 mb-2">
         {LINKS.map((link, index) => (
           <a

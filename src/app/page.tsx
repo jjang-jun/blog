@@ -48,17 +48,21 @@ export default async function Home() {
                   <li key={post.path}>
                     <Link
                       href={`/posts/${post.path}`}
-                      className="group flex items-baseline gap-4"
+                      className="group flex gap-4"
                     >
-                      <span className="w-12 shrink-0 text-sm text-gray-400">
+                      <span className="w-12 shrink-0 pt-0.5 text-sm text-gray-400">
                         {mm}.{dd}
                       </span>
-                      <span className="shrink-0 text-base text-gray-900 group-hover:text-primary-500">
-                        {post.title}
-                      </span>
-                      <span className="hidden truncate font-[system-ui] text-sm text-gray-400 md:inline">
-                        {post.desc}
-                      </span>
+                      <div>
+                        <span className="text-base text-gray-900 group-hover:text-primary-500">
+                          {post.title}
+                        </span>
+                        {post.desc && (
+                          <p className="mt-1 text-sm text-gray-400 font-[system-ui]">
+                            {post.desc}
+                          </p>
+                        )}
+                      </div>
                     </Link>
                   </li>
                 )
