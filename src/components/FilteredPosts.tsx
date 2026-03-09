@@ -1,30 +1,22 @@
 import { Post } from '@/lib/posts'
 import PostCard from './PostCard'
 
-export default function FilteredPosts({
-  category,
-  posts,
-}: {
+type Props = {
   category: string
   posts: Post[]
-}) {
-  if (category === 'All') {
-    return (
-      <ul>
-        {posts.map((post) => (
-          <PostCard key={post.title} post={post} />
-        ))}
-      </ul>
-    )
-  }
+}
+
+export default function FilteredPosts({ category, posts }: Props) {
+  const filteredPosts =
+    category === 'All'
+      ? posts
+      : posts.filter((post) => post.category === category)
 
   return (
     <ul>
-      {posts
-        .filter((post) => post.category === category)
-        .map((post) => (
-          <PostCard key={post.title} post={post} />
-        ))}
+      {filteredPosts.map((post) => (
+        <PostCard key={post.path} post={post} />
+      ))}
     </ul>
   )
 }

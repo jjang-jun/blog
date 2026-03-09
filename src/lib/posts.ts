@@ -18,7 +18,7 @@ export type PostData = Post & {
 
 const postsDir = path.join(process.cwd(), 'data', 'posts')
 
-export async function getAllPosts() {
+export async function getAllPosts(): Promise<Post[]> {
   const filePath = path.join(postsDir, 'posts.json')
   const postsJsonStr = await readFile(filePath, 'utf-8')
   const posts = JSON.parse(postsJsonStr) as Post[]
@@ -26,12 +26,12 @@ export async function getAllPosts() {
   return posts.sort((a, b) => (a.date > b.date ? -1 : 1))
 }
 
-export async function getRecentPosts(postCount: number) {
+export async function getRecentPosts(postCount: number): Promise<Post[]> {
   return (await getAllPosts()).slice(0, postCount)
 }
 
 export async function getPostData(fileName: string): Promise<PostData> {
-  const filePath = path.join(process.cwd(), 'data', 'posts', `${fileName}.md`)
+  const filePath = path.join(postsDir, `${fileName}.md`)
   const posts = await getAllPosts()
   const post = posts.find((post) => post.path === fileName)
 
@@ -42,32 +42,17 @@ export async function getPostData(fileName: string): Promise<PostData> {
   return { ...post, content }
 }
 
-export async function getCategories() {
-  const filePath = path.join(postsDir, 'posts.json')
-  const postsJsonStr = await readFile(filePath, 'utf-8')
-  const posts = JSON.parse(postsJsonStr) as Post[]
+export async function getCategories(): Promise<Record<string, number>> {
+  const posts = await getAllPosts()
 
-  const categories = {
+  const countingOfCategories: Record<string, number> = {
     All: posts.length,
-    ...countElements(posts.map((post) => post.category)),
   }
 
-  console.log(categories)
-  return categories
-}
+  posts.forEach((post) => {
+    const { category } = post
+    countingOfCategories[category] = (countingOfCategories[category] ?? 0) + 1
+  })
 
-function countElements<T>(arr: T[]): Record<string, number> {
-  const countObj: Record<string, number> = {}
-
-  for (const element of arr) {
-    const key = String(element)
-
-    if (countObj[key]) {
-      countObj[key]++
-    } else {
-      countObj[key] = 1
-    }
-  }
-
-  return countObj
+  return countingOfCategories
 }

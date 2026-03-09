@@ -19,7 +19,7 @@ export default function Navbar() {
 
   return (
     <nav className="w-full">
-      <ul className="flex 'flex-col">
+      <ul className="flex">
         {paths.map((path) => (
           <li
             key={path.href}

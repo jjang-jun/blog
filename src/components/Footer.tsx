@@ -13,7 +13,7 @@ export default function Footer() {
             key={index}
             href={link.url}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="text-3xl hover:text-sky-400"
           >
             {link.icon}
@@ -22,7 +22,7 @@ export default function Footer() {
       </ul>
 
       <p className="text-sm text-center">
-        {'©2023- jjangjun All Right Reserved.'}
+        {`\u00A92023-${new Date().getFullYear()} jjangjun All Rights Reserved.`}
       </p>
     </footer>
   )

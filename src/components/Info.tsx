@@ -2,7 +2,7 @@ import { getTitle, getAuthor, getLinks } from '@/lib/metadata'
 import Image from 'next/image'
 import { AiFillFacebook, AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
 
-const ICONS: any = {
+const ICONS: Record<string, React.ReactNode> = {
   github: <AiFillGithub size={25} />,
   facebook: <AiFillFacebook size={25} />,
   linkedin: <AiFillLinkedin size={25} />,
@@ -14,9 +14,7 @@ export default async function Info() {
   const LINKS = await getLinks()
 
   return (
-    <section
-      className={`flex flex-col md:flex-row items-center justify-center my-8`}
-    >
+    <section className="flex flex-col md:flex-row items-center justify-center my-8">
       <Image
         src="/images/avatar.jpg"
         width={150}
@@ -25,14 +23,14 @@ export default async function Info() {
         className="border rounded-full md:mr-8"
       />
 
-      <div className="">
+      <div>
         <div className="flex justify-center items-center mb-2">
           <h2 className="text-xl font-bold mr-1">@{author}</h2>
           <ul className="flex gap-1">
             {LINKS &&
               LINKS.map(({ name, url }) => (
                 <li key={url}>
-                  <a href={url} target="_blank">
+                  <a href={url} target="_blank" rel="noopener noreferrer">
                     {ICONS[name]}
                   </a>
                 </li>

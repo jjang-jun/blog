@@ -16,7 +16,6 @@ export default function PostCard({ post }: PostCardProps) {
     thumbnail || '/images/thumbnail_fallback.png'
   )
 
-  // 날짜 포맷팅 함수
   const formatDate = (date: Date | string) => {
     const dateObj = typeof date === 'string' ? new Date(date) : date
     return dateObj.toLocaleDateString('ko-KR', {
@@ -29,7 +28,6 @@ export default function PostCard({ post }: PostCardProps) {
   return (
     <Link href={`/posts/${path}`} className="group">
       <article className="h-full flex flex-col rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 bg-white">
-        {/* 이미지 컨테이너 - 비율 유지 */}
         <div className="relative aspect-[3/2] w-full overflow-hidden bg-gray-100">
           <Image
             src={imgSrc}
@@ -42,21 +40,17 @@ export default function PostCard({ post }: PostCardProps) {
           />
         </div>
 
-        {/* 컨텐츠 영역 */}
         <div className="flex flex-col flex-grow p-4">
-          {/* 카테고리 뱃지 */}
           <div className="mb-2">
             <span className="inline-block text-xs font-medium rounded-full bg-green-100 text-green-800 px-3 py-1">
               {category}
             </span>
           </div>
 
-          {/* 제목 */}
           <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-green-600 transition-colors">
             {title}
           </h3>
 
-          {/* 날짜 - 하단 고정 */}
           <time
             className="text-sm text-gray-500 mt-auto"
             dateTime={typeof date === 'string' ? date : date.toISOString()}

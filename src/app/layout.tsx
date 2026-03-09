@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={notoSans.className}>
+    <html lang="ko" className={notoSans.className}>
       <body className={`flex flex-col h-full w-full mx-auto max-w-screen-lg`}>
         <Header />
         <main className="grow">{children}</main>
