@@ -14,7 +14,7 @@ export default function Footer() {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-3xl hover:text-sky-400"
+            className="text-3xl hover:text-primary-500"
           >
             {link.icon}
           </a>

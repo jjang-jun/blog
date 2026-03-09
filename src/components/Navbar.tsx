@@ -23,8 +23,8 @@ export default function Navbar() {
         {paths.map((path) => (
           <li
             key={path.href}
-            className={`hover:bg-sky-400 rounded-sm p-2 mr-2
-              ${pathname === path.href ? 'bg-sky-400 ' : ''}`}
+            className={`hover:text-primary-500 rounded-sm p-2 mr-2
+              ${pathname === path.href ? 'text-primary-500 font-bold' : ''}`}
           >
             <Link href={path.href}>{path.label}</Link>
           </li>

@@ -18,8 +18,8 @@ export default function PostsCategoryFilter({
         {Object.entries(categories).map(([categoryName, categoryCount]) => (
           <button
             key={categoryName}
-            className={`font-bold mr-3 hover:text-sky-300 ${
-              selectedCategory === categoryName && 'text-sky-300'
+            className={`font-bold mr-3 hover:text-primary-400 ${
+              selectedCategory === categoryName && 'text-primary-500'
             }`}
             onClick={() => setSelectedCategory(categoryName)}
           >
