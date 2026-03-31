@@ -2,7 +2,7 @@
 
 import { AiFillGithub } from 'react-icons/ai'
 
-const LINKS = [{ icon: <AiFillGithub />, url: 'https://github.com/95rolancia' }]
+const LINKS = [{ icon: <AiFillGithub />, url: 'https://github.com/jjang-jun' }]
 
 export default function Footer() {
   return (
