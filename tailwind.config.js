@@ -19,6 +19,17 @@ module.exports = {
           700: '#2356b8',
         },
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            'pre': false,
+            'code': false,
+            'pre code': false,
+            'code::before': false,
+            'code::after': false,
+          },
+        },
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',

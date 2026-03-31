@@ -6,3 +6,38 @@ html,
 body {
   height: 100vh;
 }
+
+/* rehype-pretty-code (shiki) */
+[data-rehype-pretty-code-figure] pre {
+  overflow-x: auto;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+[data-rehype-pretty-code-figure] code {
+  counter-reset: line;
+  display: grid;
+}
+
+[data-rehype-pretty-code-figure] [data-line] {
+  padding: 0 1rem;
+}
+
+[data-rehype-pretty-code-figure] [data-line-numbers] > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 1rem;
+  margin-right: 1rem;
+  text-align: right;
+  color: #666;
+}
+
+code:not(pre code) {
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.25rem;
+  background: #e5e7eb;
+  font-size: 0.875em;
+}
