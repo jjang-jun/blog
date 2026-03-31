@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
-import { getAllPosts, getPostData } from '@/lib/posts'
+import { getAllPosts, getPostData, getRelatedPosts } from '@/lib/posts'
 import PostContent from '@/components/PostContent'
+import ReadingProgressBar from '@/components/ReadingProgressBar'
 
 type Props = {
   params: {
@@ -19,12 +20,16 @@ export async function generateMetadata({
 }
 
 export default async function PostPage({ params: { slug } }: Props) {
-  const post = await getPostData(slug)
+  const [post, allPosts] = await Promise.all([getPostData(slug), getAllPosts()])
+  const relatedPosts = getRelatedPosts(post, allPosts)
 
   return (
-    <article className="rounded-2xl overflow-hidden bg-gray-100 shadow-lg m-4">
-      <PostContent post={post} />
-    </article>
+    <>
+      <ReadingProgressBar />
+      <article className="rounded-2xl overflow-hidden bg-gray-100 shadow-lg m-4">
+        <PostContent post={post} relatedPosts={relatedPosts} />
+      </article>
+    </>
   )
 }
 

@@ -1,5 +1,6 @@
 import path from 'path'
 import { readFile } from 'fs/promises'
+import { calculateReadingTime } from '@/lib/reading-time'
 
 export type Post = {
   title: string
@@ -14,6 +15,7 @@ export type Post = {
 
 export type PostData = Post & {
   content: string
+  readingTime: number
 }
 
 const postsDir = path.join(process.cwd(), 'data', 'posts')
@@ -35,5 +37,26 @@ export async function getPostData(fileName: string): Promise<PostData> {
 
   const content = await readFile(filePath, 'utf-8')
 
-  return { ...post, content }
+  const readingTime = calculateReadingTime(content)
+
+  return { ...post, content, readingTime }
+}
+
+export function getRelatedPosts(
+  current: Post,
+  allPosts: Post[],
+  limit = 3
+): Post[] {
+  return allPosts
+    .filter((p) => p.path !== current.path)
+    .map((p) => ({
+      post: p,
+      score:
+        (p.category === current.category ? 2 : 0) +
+        p.tags.filter((t) => current.tags.includes(t)).length,
+    }))
+    .filter(({ score }) => score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map(({ post }) => post)
 }
