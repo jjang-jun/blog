@@ -6,7 +6,6 @@ import Footer from '@/components/Footer'
 export const metadata = {
   title: "jjangjun's blog",
   description: "jjangjun's blog",
-  icons: { icon: '/favicon.ico' },
 }
 
 const notoSans = Noto_Sans({ subsets: ['latin'], weight: '500' })
